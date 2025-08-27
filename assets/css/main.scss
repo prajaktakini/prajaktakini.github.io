@@ -1,9 +1,96 @@
+//---
+//# Only the main Sass file needs front matter (the dashes are enough)
+//search: false
+//---
+//
+//@charset "utf-8";
+//
+//@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
+//@import "minimal-mistakes"; // main partials
+
 ---
 # Only the main Sass file needs front matter (the dashes are enough)
-search: false
 ---
 
 @charset "utf-8";
 
+// Custom variables (override defaults BEFORE imports)
+$sidebar-width: 280px !default;
+$right-sidebar-width-narrow: 280px !default;
+$right-sidebar-width: 300px !default;
+$right-sidebar-width-wide: 320px !default;
+
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
+
+// Custom styles (add AFTER imports)
+.author__avatar img {
+  max-width: 220px !important;
+  width: 220px !important;
+  height: 220px !important;
+  border-radius: 50% !important;
+}
+
+.author__avatar {
+  display: table-cell;
+  vertical-align: top;
+  width: 220px;
+  height: 220px;
+}
+
+// Adjust sidebar and main content
+.sidebar {
+  @include breakpoint(max-width $large) {
+    /* fix z-index order of follow/share links */
+    position: relative;
+    z-index: 10;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+// Reduce font sizes
+body {
+  font-size: 14px;
+}
+
+.page__content {
+  font-size: 14px;
+
+  p, li, dl {
+    font-size: 14px;
+  }
+}
+
+h1 {
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.author__bio {
+  font-size: 13px;
+  margin: 0;
+}
+
+.greedy-nav a {
+  font-size: 14px;
+}
+
+.page__content p {
+  line-height: 1.5;
+}
+
+// Better spacing for project lists
+.page__content ul li {
+  margin-bottom: 0.5em;
+}
