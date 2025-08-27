@@ -1,96 +1,247 @@
-//---
-//# Only the main Sass file needs front matter (the dashes are enough)
-//search: false
-//---
-//
-//@charset "utf-8";
-//
-//@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
-//@import "minimal-mistakes"; // main partials
-
 ---
-# Only the main Sass file needs front matter (the dashes are enough)
+search: false
 ---
 
 @charset "utf-8";
 
-// Custom variables (override defaults BEFORE imports)
-$sidebar-width: 280px !default;
-$right-sidebar-width-narrow: 280px !default;
-$right-sidebar-width: 300px !default;
-$right-sidebar-width-wide: 320px !default;
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
+@import "minimal-mistakes";
 
-@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
-@import "minimal-mistakes"; // main partials
+/* SIDEBAR CONFIGURATION */
+.sidebar {
+  width: 230px !important;
+}
 
-// Custom styles (add AFTER imports)
+@media (min-width: 64em) {
+  .page {
+    padding-left: 250px !important;
+  }
+}
+
+/* PHOTO FIXES - Complete blur prevention including hover issue */
 .author__avatar img {
-  max-width: 220px !important;
-  width: 220px !important;
-  height: 220px !important;
+  width: 180px !important;
+  height: 180px !important;
+  max-width: 180px !important;
   border-radius: 50% !important;
+
+  /* Force hover-like rendering permanently */
+  will-change: transform !important;
+  -webkit-transform: translate3d(0,0,0) scale(1) !important;
+  transform: translate3d(0,0,0) scale(1) !important;
+  -webkit-font-smoothing: subpixel-antialiased !important;
+
+  /* Additional sharpening techniques */
+  -webkit-backface-visibility: hidden !important;
+  backface-visibility: hidden !important;
+  -webkit-perspective: 1000px !important;
+  perspective: 1000px !important;
+  image-rendering: -webkit-optimize-contrast !important;
+  -ms-interpolation-mode: bicubic !important;
+  filter: blur(0px) !important;
+  -webkit-filter: blur(0px) !important;
 }
 
 .author__avatar {
   display: table-cell;
   vertical-align: top;
-  width: 220px;
-  height: 220px;
+  width: 180px;
+  height: 180px;
+  -webkit-transform: translate3d(0,0,0) !important;
+  transform: translate3d(0,0,0) !important;
+  will-change: transform !important;
 }
 
-// Adjust sidebar and main content
-.sidebar {
-  @include breakpoint(max-width $large) {
-    /* fix z-index order of follow/share links */
-    position: relative;
-    z-index: 10;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
+/* Force repaint on sidebar */
+.sidebar .author__avatar {
+  -webkit-backface-visibility: hidden !important;
+  backface-visibility: hidden !important;
+}
+
+/* CONSISTENT WIDE CONTENT ACROSS ALL PAGES */
+.page,
+.archive,
+.layout--single,
+.layout--home,
+.layout--archive {
+  max-width: none !important;
+}
+
+.page__inner-wrap,
+.archive__inner-wrap {
+  max-width: 1400px !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+}
+
+/* Force consistent content width */
+@media (min-width: 64em) {
+  .page__content,
+  .archive__content {
+    width: calc(100% - 280px) !important;
+    max-width: none !important;
+    float: right !important;
+    margin-right: 0 !important;
+    padding-right: 2em !important;
   }
 }
 
-// Reduce font sizes
-body {
-  font-size: 14px;
+@media (min-width: 80em) {
+  .page__content,
+  .archive__content {
+    width: calc(100% - 280px) !important;
+    max-width: none !important;
+  }
 }
 
+/* Wide class enhancement */
+.wide .page__inner-wrap,
+.wide .archive__inner-wrap {
+  max-width: 1600px !important;
+}
+
+/* Remove any content width restrictions */
 .page__content {
-  font-size: 14px;
-
-  p, li, dl {
-    font-size: 14px;
-  }
+  max-width: none !important;
 }
 
-h1 {
-  font-size: 1.8em;
-  font-weight: bold;
+.archive {
+  max-width: none !important;
 }
 
-h2 {
-  font-size: 1.4em;
-  font-weight: bold;
+.archive__item {
+  max-width: none !important;
 }
 
-h3 {
-  font-size: 1.2em;
-  font-weight: bold;
+/* NUCLEAR ALIGNMENT FIX - FORCE WITH FLEXBOX */
+.page__inner-wrap {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.page__header,
+.page__content {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  align-self: flex-start !important;
+}
+
+.page__title {
+  margin: 0 0 1em 0 !important;
+  padding: 0 !important;
+}
+
+.page__content > * {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+/* Additional flexbox alignment */
+.page__content h1,
+.page__content h2,
+.page__content h3,
+.page__content p,
+.page__content ul,
+.page__content ol {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+/* AUTHOR PROFILE FONT SIZES - Make everything larger and readable */
+.author__name {
+  font-size: 18px !important;
+  margin-bottom: 0.5em !important;
+  font-weight: bold !important;
 }
 
 .author__bio {
-  font-size: 13px;
-  margin: 0;
+  font-size: 14px !important;
+  line-height: 1.4 !important;
+  margin-bottom: 1em !important;
 }
 
-.greedy-nav a {
-  font-size: 14px;
+/* Location and other profile text - fix tiny text issue */
+.sidebar .author__content {
+  font-size: 14px !important;
+}
+
+.sidebar .author__content p {
+  font-size: 14px !important;
+  color: #666 !important;
+  line-height: 1.4 !important;
+}
+
+.sidebar p {
+  font-size: 14px !important;
+}
+
+/* Author URLs/Links - make email, google scholar, etc readable */
+.author__urls {
+  font-size: 14px !important;
+}
+
+.author__urls a {
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+}
+
+.author__urls li {
+  margin-bottom: 0.3em !important;
+}
+
+/* Icons - make larger */
+.author__urls .fa,
+.author__urls .fab,
+.author__urls .fas {
+  font-size: 16px !important;
+}
+
+/* MAIN CONTENT FONT SIZES */
+body {
+  font-size: 14px !important;
+}
+
+.page__content {
+  font-size: 14px !important;
 }
 
 .page__content p {
-  line-height: 1.5;
+  font-size: 14px !important;
+  line-height: 1.5 !important;
 }
 
-// Better spacing for project lists
+.page__content li {
+  font-size: 14px !important;
+  margin-bottom: 0.5em !important;
+}
+
+/* HEADINGS */
+h1 {
+  font-size: 1.6em !important;
+}
+
+h2 {
+  font-size: 1.3em !important;
+}
+
+h3 {
+  font-size: 1.1em !important;
+}
+
+/* NAVIGATION */
+.greedy-nav a {
+  font-size: 14px !important;
+}
+
+/* ADDITIONAL SPACING AND LAYOUT IMPROVEMENTS */
+.author__urls-wrapper {
+  margin-top: 1em !important;
+}
+
 .page__content ul li {
-  margin-bottom: 0.5em;
+  margin-bottom: 0.5em !important;
 }

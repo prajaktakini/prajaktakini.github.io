@@ -2,6 +2,7 @@
 permalink: /about/
 title: "About"
 layout: single
+classes: wide
 author_profile: true
 ---
 
@@ -11,7 +12,7 @@ Hello! I’m <strong>Prajakta Kini</strong>, a 2nd-year Master’s student in Co
 - **M.S. in Computer Science**, University of Colorado Boulder, CO, USA (Aug 2024 - May 2026)
 - **Bachelors of Engineering in Information Technology**, Sardar Patel Institute of Technology, Mumbai, India, (Aug 2016- May 2020)
 
-## Professional Experience
+## Work Experience
 - **Graduate Research Assistant**, University of Colorado Boulder, CO, USA (Aug 2025 - Present)
 - **SDE Intern**, PhonePe, CA, USA (Jun 2025 - Aug 2025)
 - **Software Engineer II**, Uber, Bangalore, India (Mar 2023 - Jul 2024)

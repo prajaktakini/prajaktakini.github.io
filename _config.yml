@@ -117,7 +117,7 @@ author:
   avatar           : "/assets/images/profile_photo.jpg"
   bio              : "CS Graduate Student @University of Colorado Boulder"
   location         : "Boulder, Colorado, United States"
-  email            :  "prajakta.kini@colorado.edu"
+#  email            :  "prajakta.kini@colorado.edu"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
