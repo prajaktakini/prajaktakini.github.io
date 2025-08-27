@@ -1,6 +1,8 @@
 ---
 permalink: /about/
 title: "About"
+layout: single
+author_profile: true
 ---
 
 Hello! I’m <strong>Prajakta Kini</strong>, a 2nd-year Master’s student in Computer Science at the University of Colorado Boulder. My research interests lie in Natural Language Processing (NLP), with a focus on neuro-symbolic approaches, improving interpretability and alignment in large language models (LLMs), and meta-reasoning in LLMs.

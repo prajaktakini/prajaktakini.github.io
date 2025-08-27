@@ -31,10 +31,15 @@ Explore and develop neuro-symbolic methods for meta-reasoning that enable large 
   *Automated meeting summarization tool with key discussion point extraction, personalized to-do lists, and JIRA ticket integration*
 
 
-## Research Interests
+[//]: # (## Research Interests)
 
-- **Natural Language Processing**: Advanced reasoning and comprehension
-- **Meta-Reasoning**: Self-evaluation and improvement in AI systems
-- **Neurosymbolic AI**: Combining neural networks with symbolic reasoning
-- **AI Ethics**: Bias detection and fairness in healthcare applications
-- **Large Language Models**: Improving reliability and interpretability
+[//]: # ()
+[//]: # (- **Natural Language Processing**: Advanced reasoning and comprehension)
+
+[//]: # (- **Meta-Reasoning**: Self-evaluation and improvement in AI systems)
+
+[//]: # (- **Neurosymbolic AI**: Combining neural networks with symbolic reasoning)
+
+[//]: # (- **AI Ethics**: Bias detection and fairness in healthcare applications)
+
+[//]: # (- **Large Language Models**: Improving reliability and interpretability)
