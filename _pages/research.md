@@ -11,7 +11,10 @@ My research lie in Natural Language Processing (NLP), with a focus on neuro-symb
 ## Current Projects
 
 ### NeuSyM-Meta: Neuro-Symbolic Meta-Reasoning for Self-Aware Logical Evaluation in Large Language Models
-Explore and develop neuro-symbolic methods for meta-reasoning that enable large language models (LLMs) to evaluate and improve their own reasoning processes.
+Exploring neuro-symbolic methods for meta-reasoning that will enable large language models (LLMs) to evaluate and improve their own reasoning processes.
+
+### AI Misalignment and Scheming Evaluation Framework
+Studying AI misalignment with a focus on AI scheming, and developing benchmarks to evaluate and detect covert deceptive behaviors in advanced AI systems.
 
 ## Recent Projects (2024-2025)
 
